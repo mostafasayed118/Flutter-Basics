@@ -6,13 +6,22 @@ import 'package:session_code_flutter/components/custom_textformfield.dart';
 import '../components/custom_button.dart';
 import '../components/custom_textfield.dart';
 
-class LoginScreen extends StatelessWidget {
-  TextEditingController emailController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
-  TextEditingController usernameController = TextEditingController();
-  GlobalKey<FormState> formKey = GlobalKey<FormState>();
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
 
-  LoginScreen({super.key});
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  TextEditingController emailController = TextEditingController();
+
+  TextEditingController passwordController = TextEditingController();
+
+  TextEditingController usernameController = TextEditingController();
+
+  GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  bool isVisible = true;
 
   @override
   Widget build(BuildContext context) {
@@ -59,8 +68,16 @@ class LoginScreen extends StatelessWidget {
                   log(value);
                 },
                 prefixIcon: const Icon(Icons.lock),
+                obscureText: isVisible,
                 suffixIcon: IconButton(
-                    onPressed: () {}, icon: const Icon(Icons.remove_red_eye)),
+                    onPressed: () {
+                      setState(() {
+                        isVisible = !isVisible;
+                      });
+                    },
+                    icon: isVisible
+                        ? const Icon(Icons.visibility_off)
+                        : const Icon(Icons.visibility)),
                 hintText: 'Password',
               ),
               const SizedBox(height: 20),
