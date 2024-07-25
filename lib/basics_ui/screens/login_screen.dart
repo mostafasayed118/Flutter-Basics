@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:session_code_flutter/components/custom_textformfield.dart';
+import 'package:session_code_flutter/basics_ui/components/custom_textformfield.dart';
 
 import '../components/custom_button.dart';
 import '../components/custom_textfield.dart';

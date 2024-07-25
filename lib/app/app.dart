@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../screens/more_widgets.dart';
+import '../basics_ui/screens/task.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      home: MoreWidgets(),
+      home: Task(),
     );
   }
 }
