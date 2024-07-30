@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:session_code_flutter/async_programming/future.dart';
+import 'package:session_code_flutter/state_management_cubit/home.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      home: FutureScreen(),
+      home: Home(),
     );
   }
 }
