@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:session_code_flutter/state_management_cubit/home.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:session_code_flutter/api/screen/api_screen.dart';
+
+import '../api/cubit/api_cubit.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -7,10 +10,15 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      home: Home(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => ApiCubit()..fetchApi()),
+      ],
+      child: const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        home: ApiScreen(),
+      ),
     );
   }
 }
