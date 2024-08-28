@@ -1,9 +1,8 @@
 import 'dart:developer';
 
 import 'package:dio/dio.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:session_code_flutter/api/model/album_model.dart';
+import 'package:session_code_flutter/api_1/model/album_model.dart';
 
 part 'api_state.dart';
 
